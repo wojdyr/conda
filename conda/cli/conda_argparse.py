@@ -141,7 +141,7 @@ Error: You need to install conda-build in order to use the 'conda %s'
                                 for s in close:
                                     message += '    %s' % s
                             sys.exit(message)
-                    args = [find_executable('conda-' + cmd)]
+                    args = [sys.executable, find_executable('conda-' + cmd)]
                     args.extend(sys.argv[2:])
                     p = subprocess.Popen(args)
                     try:
